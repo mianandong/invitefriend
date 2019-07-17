@@ -1,0 +1,28 @@
+.head {
+    width: 96%;
+    height: 36px;
+
+    background-color: rgba(145, 239, 151, .8);
+    border-radius: 50px;
+
+    margin: 12px auto 30px;
+}
+
+.head-tip {
+    font-size: 15px;
+    color: #207C3C;
+    line-height: 36px;
+    text-align: center;
+}
+
+.free-receive {
+    width: 96%;
+    margin: auto;
+}
+
+.free-receive-img {
+    width: 100%;
+    height: 154px;
+    background-image: url('../../image/title.png');
+    background-size: 100% 100%;
+}

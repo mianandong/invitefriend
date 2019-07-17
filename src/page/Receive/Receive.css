@@ -1,0 +1,77 @@
+.receive-center-con {
+    width: 93%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.receive-center {
+    width: 100%;
+    height: 207px;
+    margin:  60px auto 0px;
+
+    background-color: #fff;
+    border-radius: 6px;
+
+    position: relative;
+
+    padding: 50px 20px 25px;
+    box-sizing: border-box;
+}
+
+.receive-center-title {
+    width: 220px;
+    height: 48px;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -110px;
+    top: -24px;
+
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    line-height: 48px;
+
+    background-image: url('../../image/tab-bg.png');
+    background-size: 100% 100%;
+}
+
+.input-wrap {
+    width: 100%;
+    height: 46px;
+    border-radius: 50px;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+.input-phone {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+
+    outline: 0;
+    border: none;
+    
+    background-color: #ECECEC;
+    font-size: 15px;
+    
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.get-share-btn {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    
+    display: block;
+
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 800;
+
+    background-image: url(../../image/btn-l-normal.png);
+    background-size: 100% 100%;
+}

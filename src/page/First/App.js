@@ -1,25 +1,28 @@
 import React from 'react';
+import './App.css';
+
+import ReceiveHead from '../ReceiveHead/ReceiveHead.js';
+import ReceiveTip from '../ReceiveTip/ReceiveTip.js';
+import Receive from '../Receive/Receive.js';
+import ReceiveEnd from '../ReceiveEnd/ReceiveEnd';
 
 class App extends React.Component {
-  constructor(...props) {
+  constructor(props) {
     super(props);
   }
 
   render() {
 
-    var titleImagePath = "../image/title.png";
-
     return (
       <div className='rootDiv'>
         
-        <div>
-          你的好友邀请你领取10份精选课件
-        </div>
+        <ReceiveHead/>
+        
+        <ReceiveTip/>
 
-        <div className='free-receive'>
-          <div className='free-receive-img'>
-          </div>
-        </div>
+        <Receive/>
+
+        <ReceiveEnd/>
         
       </div>
     );
