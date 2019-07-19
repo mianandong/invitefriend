@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import IntroduceItem from './IntroduceItem';
+import Global from '../global';
 
 import part1 from '../../image/part1.png';
 import part2 from '../../image/part2.png';
@@ -65,7 +66,7 @@ class Introduce extends React.Component {
 
     render() {
         return (
-            <div className='section-2'>
+            <div className={`${this.props.style} section-2`}>
                 <div className='introduce-head'></div>
 
                 <ul className='introduce-center'>
@@ -84,6 +85,15 @@ class Introduce extends React.Component {
 
                 <div className='introduce-botton'>
                     <div className='bottom-icon'></div>
+
+                    <div className='introduce-get-con'>
+                        <div className='introduce-input-con'>
+                            <input type="tel" placeholder='请输入手机号' id='introduce-phone' maxLength={13}/>
+                        </div>
+                        <div className='introduce-btn-con'>
+                            <a className='introduce-btn'>立即领取</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

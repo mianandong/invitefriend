@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import Global from '../global';
 
 import ReceiveHead from '../ReceiveHead/ReceiveHead.js';
 import ReceiveTip from '../ReceiveTip/ReceiveTip.js';
@@ -15,99 +16,66 @@ class App extends React.Component {
     super(props);
 
     this.slideNext = this.slideNext.bind(this);
+    this.fixIntroduceGetContent = this.fixIntroduceGetContent.bind(this);
   }
 
   componentDidMount() {
-    this.mySwiper = new Swiper('#o-c', {
+    this.mySwiper = new Swiper('.swiper-container', {
       direction: 'vertical',
       mousewheelControl: true,
-      speed: 1000,
-      onSetTransition: function(swiper) {
-          if(swiper.activeIndex == 1) {
+      speed: 1500,
+      autoHeight: true,
+      onSetTransition: (swiper) => {
+        if(swiper.activeIndex == 1) {
             swiper.params.onlyExternal = true;
-	        swiper.disableMousewheelControl();
-          }
-          else {
+            swiper.disableMousewheelControl();
+        }
+        else {
             swiper.params.onlyExternal = false;
-	        swiper.enableMousewheelControl();
+            swiper.enableMousewheelControl();
+        }
+      },
+      on: {
+          slideChange: () => {
+              this.fixIntroduceGetContent();
           }
       }
     });
 
-    // new Swiper('#i-c1', {
-    //     scrollbar: '.swiper-scrollbar',
-    //     direction: 'vertical',
-    //     slidesPerView: 'auto',
-	// 	freeMode: true,
-	// 	freeModeMomentum : false,
-	// 	mousewheelControl: true,
-	// 	mousewheelSensitivity : 0.5,
-	// 	// onSetTransition: function(swiper,translate) {
-	// 	// 	//translate 一直为0，不可直接用
-	// 	// 	let nowTranslate=swiper.translate;
-	// 	// 	if( typeof(beforeTranslate)=="undefined") {
-    //     //         beforeTranslate=0
-    //     //     };
-	// 	// 	let slideHeight=swiper.slides[0].scrollHeight;
-	// 	// 	let swiperHeight=swiper.height
-	// 	// 	if(nowTranslate>-2 && nowTranslate > beforeTranslate) {
-    //     //         oSwiper.slideTo(0);
-    //     //     }
-	// 	// 	if(slideHeight-swiperHeight+nowTranslate<2 && nowTranslate < beforeTranslate) {
-    //     //         oSwiper.slideTo(2);
-    //     //     }
-	// 	// 	beforeTranslate=nowTranslate;
-    //     // },
-	// 	// onTouchEnd:function(swiper){
-	// 	// 	if(swiper.translate>0) { 
-    //     //         oSwiper.slideTo(0);
-    //     //     }
-	// 	// 	if(swiper.translate<(swiper.height-swiper.slides[0].scrollHeight)) {
-    //     //         oSwiper.slideTo(2);
-    //     //     }
-	// 	// }
-    // });
+    Global.Swiper = this.mySwiper;
   }
 
   slideNext() {
     this.mySwiper.slideNext();
   }
 
+  fixIntroduceGetContent() {
+      let element = document.getElementsByClassName('introduce-get-con')[0];
+      if(this.mySwiper.activeIndex == 0) {
+        element.style.display = 'none';
+      }
+      else {
+        element.style.display = 'flex';
+      }
+  }
+
   render() {
     let swiperSlide = 'swiper-slide';
 
-    return (
-        <div className='swiper-container rootDiv' id='o-c'>
-            <div className='swiper-wrapper'>
-
-                <div className={swiperSlide}>
-                    <ReceiveHead />
-                    <ReceiveTip />
-                    <Receive />
-                    <ReceiveEnd />
-                    <div className='receive-up' onClick={this.slideNext}></div>
-                </div>
-
-                {/* <div className={swiperSlide}>
-                    <div className='swiper-container' id='i-c1'>
-                        <div className='swiper-wrapper'>
-                            <div className={swiperSlide}>
-                                <Introduce />
-                            </div>
-                        </div>
-                        <div className='swiper-scrollbar'>
-                            <div className='swiper-scrollbar-drag'></div>
-                        </div>
-                    </div>
-                </div> */}
-
-                <div className={swiperSlide}>
-                    <Introduce />
-                </div>
-
-            </div>
-        </div>
-    );
+      return (
+          <div className='swiper-container'>
+              <div className='swiper-wrapper'>
+                  <div className={`${swiperSlide} rootDiv`}>
+                      <ReceiveHead />
+                      <ReceiveTip />
+                      <Receive />
+                      <ReceiveEnd />
+                      <div className='receive-up' onClick={this.slideNext}></div>
+                  </div>
+                  <Introduce style={swiperSlide}/>
+              </div>
+          </div>
+      );
   }
 }
 

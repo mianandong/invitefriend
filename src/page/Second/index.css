@@ -1,6 +1,8 @@
 .section-2 {
     background-image: url('../../image/bg-2.png');
     background-size: 100% 100%;
+
+    height: auto !important;
 }
 
 .introduce-head {
@@ -38,5 +40,62 @@ li {
     margin: 50px auto 120px;
 
     background-image: url('../../image/logo-end.png');
-    background-size: 100% 100%；
+    background-size: 100% 100%;
+}
+
+.introduce-get-con {
+    display: flex;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.introduce-input-con {
+    width: 60%;
+    height: 46px;
+    background-color: rebeccapurple;
+
+    margin: auto 10px;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+    flex: 1;
+}
+
+.introduce-input-con input {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    border: none;
+    outline: none;
+
+    background-color: #ECECEC;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.introduce-btn-con {
+    width: 150px;
+}
+
+.introduce-btn-con a {
+    display: block;
+    width: 130px;
+    height: 46px;
+    margin: 12px auto;
+    background-image: url('../../image/btn-s-normal.png');
+    background-size: 100% 100%;
+    line-height: 46px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 0 1px 2px rgba(233, 93, 48, 0.5);       
 }
