@@ -1,0 +1,42 @@
+.section-2 {
+    background-image: url('../../image/bg-2.png');
+    background-size: 100% 100%;
+}
+
+.introduce-head {
+    width: 226px;
+    height: 54px;
+
+    margin: 30px auto;
+
+    background-image: url('../../image/logo-top.png');
+    background-size: 100% 100%;
+}
+
+ol, ul {
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    /* 设置了这个属性之后，li之间就没有间隔了 */
+    font-size: 0;
+}
+
+.introduce-center {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.introduce-item {
+    width: 100%;
+}
+
+.bottom-icon {
+    width: 194px;
+    height: 50px;
+    margin: 50px auto 120px;
+
+    background-image: url('../../image/logo-end.png');
+    background-size: 100% 100%；
+}

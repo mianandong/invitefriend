@@ -10,7 +10,6 @@ class ReceiveEnd extends React.Component {
         return (
             <div className='receive-end'>
                 <div className='end-tip'></div>
-                <div className='receive-up'></div>
             </div>
         );
     }

@@ -13,3 +13,17 @@
     background-image: url('../../image/bg-1.png');
     background-size: 100% 100%;
 }
+
+.receive-up {
+    width: 100px;
+    height: 100px;
+
+    margin: -80px auto 0;
+
+    background-image: url(../../image/up.svg);
+    background-size: 100% 100%;
+}
+
+#test {
+    width: 100%;
+}

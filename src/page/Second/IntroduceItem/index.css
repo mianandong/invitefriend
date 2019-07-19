@@ -1,0 +1,38 @@
+.item-head img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.item-center {
+    background-image: url('../../../image/part4.png');
+    background-size: 100% auto;
+}
+
+.item-center-title {
+    text-align: center;
+}
+
+.item-center-title img {
+    width: 240px;
+    height: 20px;
+    margin: auto;
+    background-size: 100% 100%;
+}
+
+.item-center-con {
+    padding: 15px 20px 5px; 
+    box-sizing: border-box;
+}
+
+.content-img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.item-bottom {
+    text-align: center;
+}
+
+.item-bottom img {
+    width: 100%;
+}
