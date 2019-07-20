@@ -6,9 +6,17 @@
 .end-tip {
     width: 180px;
     height: 20px;
-
-    margin: 25px auto 5px;
+    margin: 25px auto 0;
     
     background-image: url('../../image/tip-end.png');
+    background-size: 100% 100%;
+}
+
+.receive-up {
+    width: 100px;
+    height: 100px;
+    margin: -20px auto 0;
+
+    background-image: url(../../image/up.svg);
     background-size: 100% 100%;
 }

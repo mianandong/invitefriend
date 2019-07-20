@@ -5,7 +5,6 @@
 }
 
 .receive-center {
-    width: 100%;
     height: 207px;
     margin:  60px auto 0px;
 
@@ -39,23 +38,24 @@
 .input-wrap {
     width: 100%;
     height: 46px;
+    margin-bottom: 20px;
+
     border-radius: 50px;
     overflow: hidden;
-
-    margin-bottom: 20px;
 }
 
 .input-phone {
     width: 100%;
     height: 46px;
-    line-height: 46px;
 
+    /* 获得焦点后的边框 */
     outline: 0;
     border: none;
     
     background-color: #ECECEC;
     font-size: 15px;
-    
+    line-height: 46px;
+
     padding: 0 15px;
     box-sizing: border-box;
 }
@@ -63,10 +63,11 @@
 .get-share-btn {
     width: 100%;
     height: 46px;
-    line-height: 46px;
     
+    /* 设置为块级元素才能设置宽高 */
     display: block;
 
+    line-height: 46px;
     text-align: center;
     font-size: 18px;
     color: #fff;

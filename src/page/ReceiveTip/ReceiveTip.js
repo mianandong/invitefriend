@@ -1,6 +1,7 @@
 import React from 'react';
 import './ReceiveTip.css';
 import Barrager from './barrager.js';
+import styleUtils from '../../utils/styleUtils';
 
 class ReceiveTip extends React.Component {
     constructor(props) {
@@ -21,14 +22,14 @@ class ReceiveTip extends React.Component {
 
     initBroadcast() {
 
-        var barrager = Barrager.init({
+        let barrager = Barrager.init({
             user_rate: [0.3, 0.5, 0.2],
             gift_rate: [1],
             gift: ['']
         });
 
-        var nowParams = barrager.makeBarrage();
-        var nextParams = barrager.makeBarrage();
+        let nowParams = barrager.makeBarrage();
+        let nextParams = barrager.makeBarrage();
 
         this.setState({
             nowText: `${nowParams.name} ${nowParams.time}领取了教学大礼包`,
@@ -41,12 +42,19 @@ class ReceiveTip extends React.Component {
     }
 
     changeBroadcast(barrager) {
-        var nowParams = barrager.makeBarrage();
-        var nextParams = barrager.makeBarrage();
+        let nowParams = barrager.makeBarrage();
+        let nextParams = barrager.makeBarrage();
+
         this.setState({
             nowText: `${nowParams.name} ${nowParams.time}领取了教学大礼包`,
             nextText: `${nextParams.name} ${nextParams.time}领取了教学大礼包`
         });
+        
+        styleUtils.removeClassName('broadcast-now', 'animation-next');
+        styleUtils.removeClassName('broadcast-next', 'animation-now');
+
+        styleUtils.addClassName('broadcast-now', 'animation-next');
+        styleUtils.addClassName('broadcast-next', 'animation-now');
     }
 
     render() {

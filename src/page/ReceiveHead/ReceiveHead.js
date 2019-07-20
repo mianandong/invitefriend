@@ -8,16 +8,12 @@ class ReceiveHead extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className='head'>
-                    <div className='head-tip'>
-                        你的好友邀请你领取10份精选课件
-                    </div>
+            <div className='receive-head'>
+                <div className='receive-head-tip'>
+                    你的好友邀请你领取10份精选课件
                 </div>
 
-                <div className='free-receive'>
-                    <div className='free-receive-img'></div>
-                </div>
+                <div className='receive-head-img'/>
             </div>
         );
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 import IntroduceItem from './IntroduceItem';
-import Global from '../global';
 
 import part1 from '../../image/part1.png';
 import part2 from '../../image/part2.png';
@@ -67,6 +66,7 @@ class Introduce extends React.Component {
     render() {
         return (
             <div className={`${this.props.style} section-2`}>
+
                 <div className='introduce-head'></div>
 
                 <ul className='introduce-center'>

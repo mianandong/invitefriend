@@ -18,14 +18,32 @@
     position: absolute;
     top: 0;
 
-    width: 100%;
     height: 100%;
+    width: 100%;
+}
+
+.animation-now {
+    animation: broadcast-now-move 2s infinite;
+}
+
+@keyframes broadcast-now-move {
+	from {top:0;}
+	to {top:-24px;}
 }
 
 .broadcast-next {
     position: absolute;
     top: 24px;
 
-    width: 100%;
     height: 100%;
+    width: 100%;
+}
+
+.animation-next {
+    animation: broadcast-next-move 2s infinite;
+}
+
+@keyframes broadcast-next-move {
+	from {top:24px;}
+	to {top:0px;}
 }
