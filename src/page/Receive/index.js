@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import phoneNumUtils from '../../utils/phoneNumUtils';
+import ToolTip from '../../utils/tooltipUtils';
 
 class Receive extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class Receive extends React.Component {
 
         this.initTelPhone = this.initTelPhone.bind(this);
         this.submitPhoneNum = this.submitPhoneNum.bind(this);
+        this.getShareInfo = this.getShareInfo.bind(this);
     }
 
     async componentDidMount() {
@@ -44,6 +46,10 @@ class Receive extends React.Component {
         }
     }
 
+    async getShareInfo() {
+        return {'error_code':0,'data':{'userStatus':'EN5'}};
+    }
+
     // 格式化手机号
     initTelPhone(event) {
         let phone = event.target.value;
@@ -54,7 +60,9 @@ class Receive extends React.Component {
         });
     }
 
-    submitPhoneNum() {
+    //提交用户填写的手机号
+    async submitPhoneNum() {
+        //检查手机号
         const phone = this.state.phoneNum.replace(/\s*/g,"");
         const result = phoneNumUtils.isMobileNumber(phone);
         console.log(result);
@@ -63,9 +71,20 @@ class Receive extends React.Component {
                 errorDisplay: 'block',
                 errorTip: result.message
             });
+            return;
         }
-        else {
-            this.props.history.push('/download');
+
+        //请求后台，是否已注册
+        let data = await this.getShareInfo();
+        if (data.error_code === 0) {
+            if (data.data.userStatus === 'EN5') {
+                ToolTip.show("本手机号已注册", 3000);
+            } else {
+                //显示成功页面
+                this.props.history.push('/download');
+            }
+        } else {
+            ToolTip.show(data.data.message, 3000);
         }
     }
 
