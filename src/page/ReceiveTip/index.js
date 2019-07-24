@@ -42,30 +42,34 @@ class ReceiveTip extends React.Component {
 
         this.interval = setInterval(() => {
             this.changeBroadcast(barrager);
-        }, 2000);
+        }, 1800);
     }
 
     changeBroadcast(barrager) {
-        let nowParams = barrager.makeBarrage();
         let nextParams = barrager.makeBarrage();
 
-        this.setState({
-            nowText: `${nowParams.name} ${nowParams.time}领取了教学大礼包`,
-            nextText: `${nextParams.name} ${nextParams.time}领取了教学大礼包`
-        });
-        
-        styleUtils.removeClassName('broadcast-now', 'animation-next');
-        styleUtils.removeClassName('broadcast-next', 'animation-now');
+        let now = document.getElementsByClassName('broadcast-now')[0];
+        let next = document.getElementsByClassName('broadcast-next')[0];
 
-        styleUtils.addClassName('broadcast-now', 'animation-next');
-        styleUtils.addClassName('broadcast-next', 'animation-now');
+        styleUtils.addClassName(now, 'animation-top-leave');
+        styleUtils.addClassName(next, 'animation-bottom-enter');
+
+        setTimeout(()=>{
+            now.innerHTML = `${nextParams.name} ${nextParams.time}领取了教学大礼包`;
+
+            styleUtils.removeClassName(now, 'animation-top-leave');
+            styleUtils.removeClassName(next, 'animation-bottom-enter');
+
+            now.className = 'broadcast-next';
+            next.className = 'broadcast-now';
+        }, 1000);
     }
 
     render() {
         return (
             <div className='receive-tip'>
                 <div className='broadcast-now'>{this.state.nowText}</div>
-                <div className='broadcast-next'>{this.state.nextText}</div>
+                <div className='broadcast-next' id='ddd'>{this.state.nextText}</div>
             </div>
         );
     }

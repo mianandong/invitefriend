@@ -22,15 +22,6 @@
     width: 100%;
 }
 
-.animation-now {
-    animation: broadcast-now-move 2s infinite;
-}
-
-@keyframes broadcast-now-move {
-	from {top:0px;}
-	to {top:-24px;}
-}
-
 .broadcast-next {
     position: absolute;
     top: 24px;
@@ -39,11 +30,20 @@
     width: 100%;
 }
 
-.animation-next {
-    animation: broadcast-next-move 2s infinite;
+.animation-top-leave {
+    animation: broadcast-top-leave  1s;
 }
 
-@keyframes broadcast-next-move {
+@keyframes broadcast-top-leave {
+	from {top:0px;}
+	to {top:-24px;}
+}
+
+.animation-bottom-enter {
+    animation: broadcast-bottom-enter 1s;
+}
+
+@keyframes broadcast-bottom-enter {
 	from {top:24px;}
 	to {top:0px;}
 }

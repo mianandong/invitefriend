@@ -1,5 +1,4 @@
-function addClassName(originName, addName) {
-    var element = document.getElementsByClassName(originName)[0];
+function addClassName(element, addName) {
     if (element) {
         var classNameList = element.className.split(' ');
         if (classNameList.indexOf(addName) === -1) {
@@ -9,8 +8,7 @@ function addClassName(originName, addName) {
     }
 }
 
-function removeClassName(originName, removeName) {
-    var element = document.getElementsByClassName(originName)[0];
+function removeClassName(element, removeName) {
     if (element) {
         var classNameList = element.className.split(' ');
         var index = classNameList.indexOf(removeName);
