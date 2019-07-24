@@ -27,7 +27,7 @@ class Receive extends React.Component {
 
         try {
             // 有跨域问题，是不是要配置代理？
-            let data = await fetch("http://edu.seewo.com:80/api/v1/invite/inviter/info?token=&&api=GET_USER_DETAIL&userId=undefined",{
+            let data = await fetch("/api/v1/invite/inviter/info?token=&&api=GET_USER_DETAIL&userId=undefined",{
                 method: 'GET',
                 headers: myHeaders,
                 mode: 'cors'

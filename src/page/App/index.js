@@ -28,7 +28,7 @@ class App extends React.Component {
       speed: 2000,
       autoHeight: true,
       onSetTransition: (swiper) => {
-        if (swiper.activeIndex == 1) {
+        if (swiper.activeIndex === 1) {
           swiper.params.onlyExternal = true;
           swiper.disableMousewheelControl();
         }
@@ -50,7 +50,7 @@ class App extends React.Component {
 
   fixIntroduceGetContent() {
     let element = document.getElementsByClassName('introduce-get-con')[0];
-    if (this.mySwiper.activeIndex == 0) {
+    if (this.mySwiper.activeIndex === 0) {
       element.style.display = 'none';
     }
     else {
