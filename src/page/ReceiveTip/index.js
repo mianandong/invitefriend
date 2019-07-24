@@ -1,5 +1,5 @@
 import React from 'react';
-import './ReceiveTip.css';
+import './index.css';
 import Barrager from './barrager.js';
 import styleUtils from '../../utils/styleUtils';
 
@@ -20,6 +20,10 @@ class ReceiveTip extends React.Component {
         this.initBroadcast();
     }
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     initBroadcast() {
 
         let barrager = Barrager.init({
@@ -36,7 +40,7 @@ class ReceiveTip extends React.Component {
             nextText: `${nextParams.name} ${nextParams.time}领取了教学大礼包`
         });
 
-        setInterval(() => {
+        this.interval = setInterval(() => {
             this.changeBroadcast(barrager);
         }, 2000);
     }

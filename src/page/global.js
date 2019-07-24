@@ -1,3 +1,0 @@
-global = {};
-
-export default global;

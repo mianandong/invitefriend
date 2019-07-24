@@ -1,6 +1,5 @@
 import React from 'react';
-import './ReceiveEnd.css';
-import Global from '../global';
+import './index.css';
 
 class ReceiveEnd extends React.Component {
     constructor(props) {
@@ -10,7 +9,7 @@ class ReceiveEnd extends React.Component {
     }
 
     slideNext() {
-        Global.Swiper.slideNext();
+        this.props.swiper.slideNext();
     }
 
     render() {

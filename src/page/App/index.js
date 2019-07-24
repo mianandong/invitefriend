@@ -1,12 +1,11 @@
 import React from 'react';
 import './index.css';
-import Global from '../global';
 
-import ReceiveHead from '../ReceiveHead/ReceiveHead.js';
-import ReceiveTip from '../ReceiveTip/ReceiveTip.js';
-import Receive from '../Receive/Receive.js';
-import ReceiveEnd from '../ReceiveEnd/ReceiveEnd';
-import Introduce from '../Introduce/index.js';
+import ReceiveHead from '../ReceiveHead';
+import ReceiveTip from '../ReceiveTip';
+import Receive from '../Receive';
+import ReceiveEnd from '../ReceiveEnd';
+import Introduce from '../Introduce';
 
 import Swiper from 'swiper/dist/js/swiper.js';
 import 'swiper/dist/css/swiper.min.css';
@@ -14,6 +13,10 @@ import 'swiper/dist/css/swiper.min.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      swiper: ''
+    }
 
     this.fixIntroduceGetContent = this.fixIntroduceGetContent.bind(this);
   }
@@ -40,8 +43,9 @@ class App extends React.Component {
         }
       }
     });
-
-    Global.Swiper = this.mySwiper;
+    this.setState({
+      swiper: this.mySwiper
+    });
   }
 
   fixIntroduceGetContent() {
@@ -55,6 +59,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('render');
     let swiperSlide = 'swiper-slide';
 
     return (
@@ -64,8 +69,8 @@ class App extends React.Component {
           <div className={`${swiperSlide} rootDiv`}>
             <ReceiveHead />
             <ReceiveTip />
-            <Receive />
-            <ReceiveEnd />
+            <Receive history={this.props.history}/>
+            <ReceiveEnd swiper={this.state.swiper}/>
           </div>
 
           <Introduce style={swiperSlide} />

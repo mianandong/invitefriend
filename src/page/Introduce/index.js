@@ -24,7 +24,11 @@ let content3 = (
 );
 
 let content4 = (
-    <img className='content-img' src="http://seewo.oss-cn-hangzhou.aliyuncs.com/static/en-web/public/Invite-mobile/invite-mobile-03.gif" />
+    <div className='scroll-img-con'>
+        <div className='scroll-img scroll-img-1'></div>
+        <div className='scroll-img scroll-img-2'></div>
+        <div className='scroll-img scroll-img-3'></div>
+    </div>
 );
 
 let introduceItems = [

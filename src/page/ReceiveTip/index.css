@@ -27,7 +27,7 @@
 }
 
 @keyframes broadcast-now-move {
-	from {top:0;}
+	from {top:0px;}
 	to {top:-24px;}
 }
 

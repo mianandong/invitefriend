@@ -76,3 +76,16 @@
     background-image: url(../../image/btn-l-normal.png);
     background-size: 100% 100%;
 }
+
+.error-tip {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 14px;
+    line-height: 14px;
+    color: red;
+    text-align: center;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -5px;
+}

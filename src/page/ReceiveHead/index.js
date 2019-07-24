@@ -1,5 +1,5 @@
 import React from 'react';
-import './ReceiveHead.css';
+import './index.css';
 
 class ReceiveHead extends React.Component {
     constructor(props) {
